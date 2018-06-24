@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import Flow126 from './Flow126';
+import GetHCFlow from './GetHCFlow';
+import GetFlow from './GetFlow';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql'
@@ -14,10 +13,10 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <div style={{margin: 15}}>
-      <h2>CloE GraphQL client 🚀</h2>
-
+      <h2>CloE GraphQL client <span role="img" aria-label="rocket">🚀</span></h2>
       <p>This should be the flow with ID 126:</p>
-      <Flow126/>
+      <GetHCFlow/>
+      <GetFlow/>
     </div>
   </ApolloProvider>
 );
